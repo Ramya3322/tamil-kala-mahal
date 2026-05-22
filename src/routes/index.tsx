@@ -1,26 +1,50 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/site/Navbar";
+import { Hero } from "@/components/site/Hero";
+import { Profiles } from "@/components/site/Profiles";
+import { Values } from "@/components/site/Values";
+import { Timeline } from "@/components/site/Timeline";
+import { Events } from "@/components/site/Events";
+import { Documentary } from "@/components/site/Documentary";
+import { Quotes } from "@/components/site/Quotes";
+import { Testimonials } from "@/components/site/Testimonials";
+import { Footer } from "@/components/site/Footer";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Uyarvu — Celebrating Tamil Heritage, Achievements & Identity" },
+      {
+        name: "description",
+        content:
+          "A digital sanctuary celebrating Tamil heritage, people, and culture — stories of artists, scholars, farmers, and leaders who carry our identity forward.",
+      },
+      { property: "og:title", content: "Uyarvu — Celebrating Tamil Heritage & Identity" },
+      {
+        property: "og:description",
+        content:
+          "Stories of Tamil excellence across art, science, soil, and language — a premium archive of the global Tamil community.",
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-ivory text-charcoal">
+      <Navbar />
+      <main>
+        <Hero />
+        <Profiles />
+        <Values />
+        <Timeline />
+        <Documentary />
+        <Events />
+        <Quotes />
+        <Testimonials />
+      </main>
+      <Footer />
     </div>
   );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
 }
