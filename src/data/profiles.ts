@@ -1,13 +1,4 @@
-import p1 from "@/assets/p1-dancer.jpg";
-import p2 from "@/assets/p2-entrepreneur.jpg";
-import p3 from "@/assets/p3-scholar.jpg";
-import p4 from "@/assets/p4-farmer.jpg";
-import p5 from "@/assets/p5-musician.jpg";
-import p6 from "@/assets/p6-leader.jpg";
-import p7 from "@/assets/p7-artist.jpg";
-import p8 from "@/assets/p8-writer.jpg";
-import p9 from "@/assets/p9-weaver.jpg";
-import p10 from "@/assets/p10-activist.jpg";
+
 
 export type Profile = {
   id: string;
@@ -30,7 +21,7 @@ export const profiles: Profile[] = [
     role: "Classical Bharatanatyam Dancer",
     domain: "Classical Arts",
     quote: "Movement is the visual representation of our ancestors' silent prayers.",
-    image: p1,
+    image: "src/assets/p1-dancer.JPEG",
     bio: "Trained since age five in the Pandanallur tradition, Ananya has performed across thirty-two countries, carrying the abhinaya of Tamil temple dance into contemporary stages while mentoring the next generation in Chennai's Kalakshetra circle.",
     achievements: [
       "Sangeet Natak Akademi Yuva Puraskar, 2022",
@@ -56,7 +47,7 @@ export const profiles: Profile[] = [
     role: "Agri-Tech Pioneer",
     domain: "Innovation",
     quote: "Blending Sangam wisdom with silicon to revolutionise the fields that fed empires.",
-    image: p2,
+    image: "src/assets/p2-entrepreneur.JPG",
     bio: "After a decade in Silicon Valley, Karthik returned to his ancestral village in Erode to build sensor networks for smallholder farmers, marrying ancestral water-harvesting knowledge with modern machine learning.",
     achievements: [
       "Forbes 30 Under 30, Asia",
@@ -82,7 +73,7 @@ export const profiles: Profile[] = [
     role: "Linguistics Scholar",
     domain: "Literature",
     quote: "Our language is not just a tool; it is the geography of our soul.",
-    image: p3,
+    image: "src/assets/WhatsApp Image 2026-05-23 at 12.03.56 PM.jpeg",
     bio: "A lifelong scholar of Old Tamil and Sangam-era poetics, Dr. Meenakshi has spent five decades translating palm-leaf manuscripts and mentoring a generation of Tamil philologists.",
     achievements: [
       "Padma Shri for contributions to Tamil literature",
@@ -105,7 +96,7 @@ export const profiles: Profile[] = [
     role: "Organic Farmer & Seed Keeper",
     domain: "Agriculture",
     quote: "The soil remembers every song our grandparents sang to it.",
-    image: p4,
+    image: "src/assets/p4-farmer.jpeg",
     bio: "On his three-acre farm in Sivaganga, Selvam preserves over 90 indigenous rice varieties that were nearly lost to monoculture, distributing seeds freely to farmers across the Cauvery delta.",
     achievements: [
       "Recipient of the Plant Genome Saviour Award",
@@ -128,15 +119,14 @@ export const profiles: Profile[] = [
     role: "Carnatic Vocalist & Veena Artist",
     domain: "Classical Music",
     quote: "Every raga is a temple built of breath and time.",
-    image: p5,
+    image: "src/assets/p5-musician.jpeg",
     bio: "Performing across the Margazhi season for over thirty years, Rajalakshmi is known for her devotion to the compositions of Muthuswami Dikshitar and her rare command of the veena.",
     achievements: [
       "Sangeetha Kalanidhi recipient",
       "Recorded the complete Navagraha Kritis",
       "Mentors over 200 students globally via virtual gurukulam",
     ],
-    contributions:
-      "Founded a scholarship for young women musicians from rural Tamil Nadu.",
+    contributions: "Founded a scholarship for young women musicians from rural Tamil Nadu.",
     timeline: [
       { year: "1968", event: "Born into a musical family in Chennai" },
       { year: "1985", event: "Debut at Madras Music Academy" },
@@ -151,7 +141,7 @@ export const profiles: Profile[] = [
     role: "Community Social Leader",
     domain: "Social Impact",
     quote: "A community rises only when its smallest voice is heard the loudest.",
-    image: p6,
+    image: "src/assets/p6-leader.jpeg",
     bio: "From a fishing village in Nagapattinam, Anand has built grassroots cooperatives that empower coastal Tamil communities with education, micro-credit, and disaster preparedness.",
     achievements: [
       "Built 12 community schools post-tsunami",
@@ -174,7 +164,7 @@ export const profiles: Profile[] = [
     role: "Contemporary Visual Artist",
     domain: "Visual Arts",
     quote: "I paint to keep a conversation going with the wall paintings of Chola caves.",
-    image: p7,
+    image: "src/assets/p7-artist.jpeg",
     bio: "Vignesh translates the iconography of Tamil temple murals into bold contemporary canvases that have travelled from Kochi to Venice, redefining how the world sees South Indian visual heritage.",
     achievements: [
       "Featured at the Kochi-Muziris Biennale",
@@ -197,7 +187,7 @@ export const profiles: Profile[] = [
     role: "Novelist & Essayist",
     domain: "Literature",
     quote: "Words are the only vessels that carry an entire civilisation across centuries.",
-    image: p8,
+    image: "src/assets/p8-writer.jpeg",
     bio: "Author of nine novels chronicling the lives of caste-oppressed communities in Tamil Nadu, Perumal's prose is widely taught in universities and translated into eleven languages.",
     achievements: [
       "Sahitya Akademi Award",
@@ -220,15 +210,14 @@ export const profiles: Profile[] = [
     role: "Master Silk Weaver",
     domain: "Craft",
     quote: "Gold thread carries an oath; you weave only what you can stand by.",
-    image: p9,
+    image: "src/assets/p9-weaver.jpeg",
     bio: "A fourth-generation Kanchipuram silk weaver, Palanivel revived a forgotten temple-border motif and trained over 60 young weavers, ensuring the craft survives industrialisation.",
     achievements: [
       "National Award for Master Craftsperson",
       "Revived 6 temple-border motifs",
       "Trained 60+ young weavers",
     ],
-    contributions:
-      "Operates a fair-wage handloom cooperative serving 22 weaver families.",
+    contributions: "Operates a fair-wage handloom cooperative serving 22 weaver families.",
     timeline: [
       { year: "1962", event: "Born in Kanchipuram" },
       { year: "1980", event: "Inherited family loom" },
@@ -243,7 +232,7 @@ export const profiles: Profile[] = [
     role: "Folk Performer & Cultural Activist",
     domain: "Folk Heritage",
     quote: "The parai is not just a drum; it is the heartbeat of a forgotten people.",
-    image: p10,
+    image: "src/assets/p10-activist.jpeg",
     bio: "Muthu has reclaimed the parai drum from caste stigma, taking it into schools, universities, and global stages as an instrument of Tamil pride and resistance.",
     achievements: [
       "Performed at the British Museum",
