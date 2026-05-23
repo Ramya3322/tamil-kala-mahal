@@ -84,26 +84,7 @@ export function Hero() {
         <div className="relative flex justify-center items-end h-full w-full lg:w-1/2 animate-fade-up">
 
           {/* Logo Glow */}
-          <div className="absolute top-[5%] w-[150px] h-[150px] bg-gold/20 blur-3xl rounded-full z-0" />
-
-          {/* ONE FeTNA Logo */}
-          <img
-            src={"src/assets/onefetna-logo.png"}
-            alt="ONE FeTNA Logo"
-            className="
-    absolute
-    top-[-10px]
-    left-[-30px]
-    md:left-[-60px]
-    lg:left-[-80px]
-    z-30
-    w-[150px]
-    md:w-[180px]
-    object-contain
-    drop-shadow-[0_0_40px_rgba(212,175,55,0.45)]
-    animate-float
-  "
-          />
+          
 
           {/* Main Golden Glow */}
           <div className="absolute w-[450px] h-[450px] md:w-[700px] md:h-[700px] bg-gold/20 blur-3xl rounded-full" />

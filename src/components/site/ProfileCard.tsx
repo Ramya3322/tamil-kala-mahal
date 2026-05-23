@@ -9,7 +9,7 @@ export function ProfileCard({ profile, onOpen }: Props) {
       className="group text-left w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
       aria-label={`Open profile of ${profile.name}`}
     >
-      <div className="relative overflow-hidden mb-6 aspect-[4/5] bg-secondary ring-1 ring-maroon/10">
+      <div className="relative overflow-hidden mb-6 aspect-[3/5] bg-secondary ring-1 ring-maroon/10">
         <img
           src={profile.image}
           alt={`Portrait of ${profile.name}`}
