@@ -2,17 +2,45 @@ export type Profile = {
   id: string;
   name: string;
   role: string;
+  organization?: string;
   domain: string;
   quote: string;
   image: string;
   bio: string;
   achievements: string[];
   contributions: string;
+  leadership?: string[];
+  financialManagement?: string[];
+  tamilService?: string[];
+  humanitarianWorks?: string[];
+  awards?: string[];
+  principles?: string[];
+  closingStatement?: string;
   timeline: { year: string; event: string }[];
   social: { label: string; href: string }[];
-  images: string[];
+  images?: string[];
 };
 
+const profileAssets = import.meta.glob(
+  "../assets/*.{png,PNG,jpg,JPG,jpeg,JPEG,heic,HEIC}",
+  {
+  eager: true,
+  query: "?url",
+  import: "default",
+  },
+) as Record<string, string>;
+
+function asset(fileName: string) {
+  const key = `../assets/${fileName}`;
+  if (profileAssets[key]) return profileAssets[key];
+
+  const lowerKey = key.toLowerCase();
+  const fallback = Object.entries(profileAssets).find(
+    ([assetPath]) => assetPath.toLowerCase() === lowerKey,
+  );
+
+  return fallback?.[1] ?? "";
+}
 
 export const profiles: Profile[] = [
   {
@@ -22,7 +50,7 @@ export const profiles: Profile[] = [
     domain: "Tamil Community Service & Heritage",
     quote:
       "Leadership is about bringing people together, listening with maturity, and moving forward collectively for the greater good of the community.",
-    image: "src/assets/WhatsApp Image 2026-05-23 at 3.15.30 PM.jpeg",
+    image: asset("WhatsApp Image 2026-05-23 at 3.15.30 PM.jpeg"),
     bio: "Ezhilan Ramarajan is a longtime Tamil community volunteer, technology leader, entrepreneur, and cultural advocate with more than 17 years of active service in Tamil Sangam and FeTNA initiatives. Born and raised in Chennai, Tamil Nadu, he currently serves as Vice President of FeTNA and has held multiple leadership roles within the Greater Atlanta Tamil Sangam. Alongside his organizational leadership, he is also a Varmakalai Aasan dedicated to preserving and promoting ancient Tamil martial arts and heritage for future generations.",
     achievements: [
       "Current Vice President of FeTNA",
@@ -42,14 +70,14 @@ export const profiles: Profile[] = [
     ],
     social: [{ label: "YouTube", href: "#" }],
     images: [
-      "src/assets/20200227_140148.jpg",
-      "src/assets/20240427_204759.jpg",
-      "src/assets/20240427_210203.jpg",
-      "src/assets/20240515_111618.jpg",
-      "src/assets/Chocolate Krishna-37.jpg",
-      "src/assets/Chocolate Krishna-132.jpg",
-      "src/assets/DSC_0054.JPG",
-      "src/assets/DSC00656.JPG"
+      asset("20200227_140148.jpg"),
+      asset("20240427_204759.jpg"),
+      asset("20240427_210203.jpg"),
+      asset("20240515_111618.jpg"),
+      asset("Chocolate Krishna-37.jpg"),
+      asset("Chocolate Krishna-132.jpg"),
+      asset("DSC_0054.JPG"),
+      asset("DSC00656.JPG")
 
     ],
   },
@@ -60,7 +88,7 @@ export const profiles: Profile[] = [
     // organization: "New Jersey Tamil Peravai",
     domain: "தமிழ்க்கல்வி • நிர்வாகம் • சமூக சேவை",
     quote: "வெளிப்படைத்தன்மை • அணுகக்கூடிய தலைமைத்துவம் • சேவை • ஒற்றுமை",
-    image: "src/assets/WhatsApp Image 2026-05-23 at 12.03.56 PM.jpeg",
+    image: asset("WhatsApp Image 2026-05-23 at 12.03.56 PM.jpeg"),
 
 
     bio: "Rutgers University-யில் கடந்த 28 ஆண்டுகளாக கல்வி மற்றும் ஆராய்ச்சி துறையில் பணியாற்றி வரும் முனைவர் கபிலன் வெள்ளையா அவர்கள், Rutgers School of Dental Medicine-இல் துணைப் பேராசிரியராக 16 ஆண்டுகளுக்கும் மேலாக சேவை செய்து வருகிறார். மருத்துவம், பல் மருத்துவம், PhD மற்றும் சர்வதேச மாணவர்களுக்கு கற்பித்துவருவதுடன், இரும்புச் சத்து குறைபாடு மற்றும் Alzheimer நோய் தொடர்பான முக்கிய ஆராய்ச்சிகளில் ஈடுபட்டு வருகிறார். தமிழ் மொழி, கல்வி, சமூக ஒற்றுமை மற்றும் பேரவை நிர்வாக வளர்ச்சிக்காக tireless-ஆக செயல்பட்டு வரும் இவர், FeTNA செயலாளராக வெளிப்படையான நிர்வாகத்தையும் வலுவான தகவல் தொடர்பையும் உருவாக்கியுள்ளார்.",
@@ -129,12 +157,12 @@ export const profiles: Profile[] = [
       },
     ],
         images: [
-      "src/assets/vk2.png",
-      "src/assets/NJTaP.JPG",
-      "src/assets/NJTaP Foundars.png",
-      "src/assets/B 01 (50)_Original.JPG",
-      "src/assets/B 01 (129)_Original.JPG",
-      "src/assets/aa59d0eb-7719-458a-b54b-7698d0398a00.jpg"
+      asset("vk2.png"),
+      asset("NJTaP.JPG"),
+      asset("NJTaP Foundars.png"),
+      asset("B 01 (50)_Original.JPG"),
+      asset("B 01 (129)_Original.JPG"),
+      asset("aa59d0eb-7719-458a-b54b-7698d0398a00.jpg")
     ],
   },
   {
@@ -144,7 +172,7 @@ export const profiles: Profile[] = [
     organization: "FeTNA",
     domain: "நிர்வாகம் • நிதி மேலாண்மை • சமூக சேவை",
     quote: "உண்மை • வெளிப்படைத்தன்மை • நம்பிக்கை",
-    image: "src/assets/p10-activist.jpeg",
+    image: asset("p10-activist.jpeg"),
 
     bio: "பேரவை (FeTNA) அமைப்பில் பல ஆண்டுகளாக நிர்வாகம், நிதி மேலாண்மை மற்றும் சமூக சேவைகளில் முக்கிய பங்காற்றி வரும் வள்ளிக்கண்ணன் மருதப்பன் அவர்கள், 2024–2026 காலகட்டத்தில் பொருளாளராக இருந்து முழுமையான நிதி நிர்வாக மாற்றங்களை முன்னெடுத்தார். வெளிப்படைத்தன்மை, பொறுப்புணர்வு மற்றும் நம்பகத்தன்மையை அடிப்படையாகக் கொண்டு பேரவையின் கணக்கியல் மற்றும் நிர்வாக முறைகளை நவீனப்படுத்தியுள்ளார்.",
 
@@ -248,7 +276,7 @@ export const profiles: Profile[] = [
     domain: "தமிழ் சமூகம் & பேரவைப் பணி",
     quote:
       "ஒரே குழு… ஒரே நோக்கம்… என்ற எண்ணத்தோடு சமூக ஒற்றுமைக்கும் தமிழர் முன்னேற்றத்திற்கும் தொடர்ந்து பணியாற்றுகிறேன்.",
-    image: "src/assets/p8-writer.jpeg",
+    image: asset("p8-writer.jpeg"),
     bio: "ஷான் குத்தாலிங்கன் அவர்கள் டுவின்சிட்டீஸ் தமிழ் அசோசியேசன் மற்றும் டுவின்சிட்டீஸ் தமிழ் பாடசாலையின் நிறுவனர்களில் ஒருவராக இருந்து, கடந்த இருபதுக்கும் மேற்பட்ட ஆண்டுகளாக அமெரிக்கா முழுவதும் உள்ள தமிழ்ச் சங்கங்களுடன் நெருங்கிய தொடர்பு மற்றும் சமூகப்பணியில் தொடர்ந்து ஈடுபட்டு வருகிறார். கல்வி, தமிழ் வளர்ச்சி, பேரவை நிர்வாகம் மற்றும் சமூக ஒற்றுமை ஆகிய துறைகளில் முக்கிய பங்களிப்புகளை வழங்கி வருகிறார்.",
     achievements: [
       "டுவின்சிட்டீஸ் தமிழ் பாடசாலையின் முன்னாள் பள்ளி முதல்வர் (2013–2014)",
@@ -278,7 +306,7 @@ export const profiles: Profile[] = [
     // organization: "சான் ஃபிரான்சிஸ்கோ வளைகுடாப் பகுதித் தமிழ் மன்றம்",
     domain: "நிதி நிர்வாகம் • சமூக சேவை • தலைமைத்துவம்",
     quote: "வலுவான நிதி • வலுவான சேவைக்கு அடித்தளம்",
-    image: "src/assets/p5-musician.jpeg",
+    image: asset("p5-musician.jpeg"),
 
 
     bio: "2007 முதல் வட அமெரிக்கத் தமிழ் அமைப்புகள் மற்றும் சமூக சேவைகளில் தொடர்ந்து தன்னார்வத் தொண்டாற்றி வரும் கார்த்திகேயன் பெருமாள் அவர்கள், பேரவை (FeTNA) மற்றும் வளைகுடாப் பகுதித் தமிழ் மன்றத்தின் பல்வேறு நிர்வாக, நிதி மற்றும் மாநாட்டு குழுக்களில் முக்கிய பங்களிப்புகளை வழங்கியுள்ளார். நிதி வெளிப்படைத்தன்மை, பொறுப்புணர்வு மற்றும் சமூக நலனுக்கான அர்ப்பணிப்புடன் செயல்பட்டு வரும் இவர், பல்வேறு நிதி திரட்டல் முயற்சிகள், பேரிடர் நிவாரணப் பணிகள் மற்றும் தமிழ் பண்பாட்டு வளர்ச்சித் திட்டங்களில் சிறப்பாக செயல்பட்டு வருகிறார்.",
@@ -355,7 +383,7 @@ export const profiles: Profile[] = [
     // organization: "விஸ்கான்சின் தமிழ்ச் சங்கம்",
     domain: "தமிழ் பண்பாடு • சமூக சேவை • தலைமைத்துவம்",
     quote: "மொழியே அடையாளம் • கலையே வாழ்வு • சேவையே இலக்கு",
-    image: "src/assets/p2-entrepreneur.JPG",
+    image: asset("p2-entrepreneur.JPG"),
 
 
     bio: "கடந்த நான்கு தசாப்தங்களாக தமிழ் மொழி, கலை, பண்பாடு மற்றும் சமூக சேவைக்காக tireless-ஆக செயல்பட்டு வரும் திருமதி ஜான்சிராணி பிரபாகரன், இந்தியக் குடியரசுத் தலைவரின் சிறந்த இளம் சாரணியர் விருதிலிருந்து அமெரிக்க ஜனாதிபதியின் தன்னார்வ சேவை விருது வரை பல்வேறு அங்கீகாரங்களைப் பெற்றுள்ளார். விஸ்கான்சின் தமிழ்ச் சங்கத்தின் நிறுவனர் உறுப்பினர்களில் ஒருவராகவும், FeTNA-வில் 20 ஆண்டுகளுக்கும் மேலாக பல்வேறு பொறுப்புகளில் பணியாற்றியவராகவும் திகழ்கிறார். கரகம், பறை, வில்லுப்பாட்டு போன்ற பாரம்பரியக் கலைகளை அமெரிக்க மேடைகளில் கொண்டு சென்றதுடன், கிராமத் தத்தெடுப்பு, கல்வி உதவி, பெண்கள் முன்னேற்றம் மற்றும் ஹார்வர்ட் தமிழ் இருக்கை நிதி திரட்டல் போன்ற சமூகப் பணிகளிலும் பெரும் பங்காற்றியுள்ளார்.",
@@ -445,19 +473,19 @@ export const profiles: Profile[] = [
       },
     ],
      images: [
-      "src/assets/30th_FeTNA.PNG",
-      "src/assets/2023FeTNA_Sangangalin Sangamam.PNG",
-      "src/assets/2023FeTNA.PNG",
-      "src/assets/2025FITEN_Madurai.PNG",
-      "src/assets/2025NallaKannu_Aiyaa.PNG",
-      "src/assets/2025NRT.JPG",
-      "src/assets/2025NRT.PNG",
-      "src/assets/2026_FeTNA.PNG",
-      "src/assets/2026NRT (1).PNG",
-      "src/assets/2026NRT (2).PNG",
-      "src/assets/2026NRT.PNG",
-      "src/assets/2026Tamilisai_Chennai.PNG",
-      "src/assets/Chicago_Tirukkural_Manaadu.PNG",
+      asset("30th_FeTNA.PNG"),
+      asset("2023FeTNA_Sangangalin Sangamam.PNG"),
+      asset("2023FeTNA.PNG"),
+      asset("2025FITEN_Madurai.PNG"),
+      asset("2025NallaKannu_Aiyaa.PNG"),
+      asset("2025NRT.JPG"),
+      asset("2025NRT.PNG"),
+      asset("2026_FeTNA.PNG"),
+      asset("2026NRT (1).PNG"),
+      asset("2026NRT (2).PNG"),
+      asset("2026NRT.PNG"),
+      asset("2026Tamilisai_Chennai.PNG"),
+      asset("Chicago_Tirukkural_Manaadu.PNG"),
     ],
   },
   {
@@ -466,7 +494,7 @@ export const profiles: Profile[] = [
     role: "சமூக சேவையாளர் & பேரவை இயக்குநர் வேட்பாளர்",
     domain: "தமிழர் சமூக சேவை & ஈழ இணைப்பு",
     quote: "ஈழத்தின் உணர்வு… பேரவையின் ஒற்றுமை… சேவையின் தொடர்ச்சி…",
-    image: "src/assets/p9-weaver.jpeg",
+    image: asset("p9-weaver.jpeg"),
     bio: "ஈழத்தின் வலியையும் தமிழரின் உயிர்ப்பையும் மனதில் சுமந்து, கடந்த 30 ஆண்டுகளுக்கும் மேலாக சமூகப்பணியில் அர்ப்பணிப்புடன் செயல்பட்டு வரும் தமிழ்ப்பெண் சுபா சுந்தரலிங்கம். யாழ்ப்பாணத்தில் பிறந்து வளர்ந்த அவர், 1989 ஆம் ஆண்டு அமெரிக்காவின் போஸ்டனில் குடியேறிய பின்னரும் தமிழர் சமூகப்பணியில் தொடர்ந்து ஈடுபட்டு வருகிறார். தற்போது வட அமெரிக்கத் தமிழ்ச்சங்கப் பேரவையின் உதவி பொருளாளராகவும், போஸ்டன் தமிழ்ச் சங்கத்தின் துணைத் தலைவராகவும், இலங்கைத் தமிழ் சங்கத்தின் குழு உறுப்பினராகவும், “நவ்-வாவ்” அமைப்பின் நிறுவனரும் தலைவருமாகவும் பணியாற்றி வருகிறார்.",
     achievements: [
       "வட அமெரிக்கத் தமிழ்ச்சங்கப் பேரவையின் உதவி பொருளாளராக பணியாற்றுகிறார்",
@@ -493,7 +521,7 @@ export const profiles: Profile[] = [
     domain: "Technology & Tamil Diaspora",
     quote:
       "Empowering communities through technology, leadership, and lifelong service to Tamil culture.",
-    image: "src/assets/p4-farmer.jpeg",
+    image: asset("p4-farmer.jpeg"),
     bio: "Kathirvel Kumararaja is the Founder & CEO of DevJee Inc., an AI consulting company headquartered in New York. With strong involvement in Tamil diaspora initiatives and community leadership, he has actively contributed to cultural, charitable, and professional organizations across the United States while supporting Tamil development initiatives globally.",
     achievements: [
       "Rang the NASDAQ opening bell on behalf of TiE New York",
@@ -523,7 +551,7 @@ export const profiles: Profile[] = [
     domain: "Tamil Diaspora & Social Service",
     quote:
       "Dedicated to serving communities through leadership, volunteering, and humanitarian support.",
-    image: "src/assets/p6-leader.jpeg",
+    image: asset("p6-leader.jpeg"),
     bio: "An active Tamil community leader and volunteer known for contributions to humanitarian initiatives, fundraising efforts, and Tamil diaspora engagement through the Kansas City Tamil Sangam. With years of service and leadership, they have supported disaster rehabilitation efforts and community development initiatives benefiting Tamil Nadu and Tamil communities abroad.",
     achievements: [
       "Recipient of the PVSA Gold Award for volunteering",
@@ -553,7 +581,7 @@ export const profiles: Profile[] = [
     domain: "தமிழ் புலம்பெயர் சமூகம் & கலாச்சார வளர்ச்சி",
     quote:
       "ஒற்றுமை, வெளிப்படைத் தலைமையியல் மற்றும் தமிழ் பண்பாட்டு பெருமையின் மூலம் சமூக முன்னேற்றத்தை உருவாக்குவது என் நோக்கம்.",
-    image: "src/assets/p7-artist.jpeg",
+    image: asset("p7-artist.jpeg"),
     bio: "ரவிசங்கர் அவர்கள் டென்னசி தமிழ்ச் சங்கம் மற்றும் FeTNA அமைப்புகளில் நீண்டகாலமாகச் செயல்பட்டு வரும் சமூகத் தலைவர் மற்றும் தன்னார்வலர் ஆவார். அவரது தலைமையின் மூலம் அமைப்பு வளர்ச்சி, கலாச்சாரப் பாதுகாப்பு, நிதி முன்னேற்றம் மற்றும் அவசரகால உதவி திட்டங்கள் போன்ற பல்வேறு சமூக முயற்சிகளில் முக்கிய பங்காற்றி வருகிறார்.",
     achievements: [
       "டென்னசி தமிழ்ச் சங்கத்தின் முன்னாள் தலைவர் (2022–2023)",
@@ -580,7 +608,7 @@ export const profiles: Profile[] = [
     domain: "Leadership & Finance",
     quote:
       "Driven by service, leadership, and ambition to create meaningful impact across business, education, and the Tamil community.",
-    image: "src/assets/p1-dancer.JPEG",
+    image: asset("p1-dancer.JPEG"),
     bio: "Guhan Sivakumar is a student leader, finance aspirant, and community advocate currently studying at Indiana University’s Kelley School of Business. From leading student government initiatives for over 14,000 students to representing student voices at the university level, Guhan has demonstrated excellence in leadership, academics, and service.",
     achievements: [
       "Elected President of the Student Body at Kelley School of Business",
@@ -606,11 +634,11 @@ export const profiles: Profile[] = [
       { label: "Instagram", href: "#" },
     ],
     images: [
-      "src/assets/FETNA_1.jpg",
-      "src/assets/FETNA_2.jpeg",
-      "src/assets/FETNA_3.jpg",
-      "src/assets/FETNA_4.jpg",
-      "src/assets/FETNA_5.jpg",
+      asset("FETNA_1.jpg"),
+      asset("FETNA_2.jpeg"),
+      asset("FETNA_3.jpg"),
+      asset("FETNA_4.jpg"),
+      asset("FETNA_5.jpg"),
 
 
     ],

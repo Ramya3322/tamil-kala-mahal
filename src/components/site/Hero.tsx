@@ -1,4 +1,9 @@
 
+const thiruvalluvarImage = new URL(
+  "../../assets/thiruvalluvarImg.png",
+  import.meta.url,
+).toString();
+
 export function Hero() {
   return (
     <header
@@ -91,7 +96,7 @@ export function Hero() {
 
           {/* Statue */}
           <img
-            src={"src/assets/thiruvalluvarImg.png"}
+            src={thiruvalluvarImage}
             alt="Thiruvalluvar Statue"
             className="
               relative z-10
