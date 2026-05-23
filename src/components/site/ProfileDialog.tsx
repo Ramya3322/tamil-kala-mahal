@@ -103,6 +103,27 @@ export function ProfileDialog({ profile, onClose }: Props) {
                 </section>
               </aside>
             </div>
+            {profile.images && profile.images.length > 0 && (
+              <section>
+                <h4 className="text-[10px] font-bold tracking-[0.3em] uppercase text-gold mb-4 pl-10">
+                  Gallery
+                </h4>
+                <div className="grid grid-cols-4 gap-2 pl-10">
+                  {profile.images.map((src, i) => (
+                    <div
+                      key={i}
+                      className="aspect-square overflow-hidden rounded-sm"
+                    >
+                      <img
+                        src={src}
+                        alt={`${profile.name} photo ${i + 1}`}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
           </div>
         )}
       </DialogContent>
