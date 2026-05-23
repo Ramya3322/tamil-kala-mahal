@@ -37,13 +37,7 @@ function Index() {
         <Hero />
         <Profiles />
         <Values />
-        <Timeline />
-        <Documentary />
-        <Events />
-        <Quotes />
-        <Testimonials />
       </main>
-      <Footer />
     </div>
   );
 }

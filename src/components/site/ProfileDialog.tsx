@@ -10,18 +10,18 @@ export function ProfileDialog({ profile, onClose }: Props) {
       <DialogContent className="max-w-5xl p-0 overflow-hidden bg-ivory border-maroon/20 max-h-[90vh] overflow-y-auto">
         {profile && (
           <div>
-            <div className="relative h-72 md:h-96 overflow-hidden">
-              <img
-                src={profile.image}
-                alt={profile.name}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
+            <div className="relative h-[320px] overflow-hidden flex items-center justify-center bg-black">
+  <img
+    src={profile.image}
+    alt={profile.name}
+    className="w-full h-full object-contain"
+  />
               <div className="absolute inset-0 bg-gradient-to-t from-maroon via-maroon/40 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 text-ivory">
                 <p className="text-gold text-[11px] font-bold tracking-[0.25em] uppercase mb-3">
                   {profile.domain}
                 </p>
-                <DialogTitle className="font-serif text-4xl md:text-5xl text-ivory text-balance">
+                <DialogTitle className="font-serif text-4xl md:text-2xl text-ivory text-balance">
                   {profile.name}
                 </DialogTitle>
                 <DialogDescription className="text-ivory/80 mt-2 text-base">
