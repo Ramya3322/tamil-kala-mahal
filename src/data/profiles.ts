@@ -16,29 +16,36 @@ export type Profile = {
 
 export const profiles: Profile[] = [
   {
-    id: "ananya-selvam",
-    name: "Ananya Selvam",
-    role: "Classical Bharatanatyam Dancer",
-    domain: "Classical Arts",
-    quote: "Movement is the visual representation of our ancestors' silent prayers.",
+    id: "guhan-sivakumar",
+    name: "Guhan Sivakumar",
+    role: "Student Leader & Business Scholar",
+    domain: "Leadership & Finance",
+    quote:
+      "Driven by service, leadership, and ambition to create meaningful impact across business, education, and the Tamil community.",
     image: "src/assets/p1-dancer.JPEG",
-    bio: "Trained since age five in the Pandanallur tradition, Ananya has performed across thirty-two countries, carrying the abhinaya of Tamil temple dance into contemporary stages while mentoring the next generation in Chennai's Kalakshetra circle.",
+    bio: "Guhan Sivakumar is a student leader, finance aspirant, and community advocate currently studying at Indiana University’s Kelley School of Business. From leading student government initiatives for over 14,000 students to representing student voices at the university level, Guhan has demonstrated excellence in leadership, academics, and service.",
     achievements: [
-      "Sangeet Natak Akademi Yuva Puraskar, 2022",
-      "Performed at the Edinburgh International Festival",
-      "Founder of the Naatya Sangam Trust for rural arts education",
+      "Elected President of the Student Body at Kelley School of Business",
+      "Selected to the Kelley Honors Program and Hutton Honors College",
+      "Recipient of the Dean’s Scholar $28,000 merit award",
+      "Chosen as 1 of 12 students on Indiana University’s 105th Board of Aeons",
+      "Selected for the Investment Banking Workshop program",
+      "Awarded scholarship for Varsity Volleyball leadership and commitment",
     ],
     contributions:
-      "Pioneered a free open-air dance series across Tamil Nadu's heritage temples, training over 400 young dancers from underrepresented districts.",
+      "Through student government, professional development programs, and Tamil community involvement, Guhan has worked to amplify student voices, expand access to career resources, and foster cultural engagement across campus and beyond.",
     timeline: [
-      { year: "1995", event: "Born in Thanjavur to a family of nattuvanars" },
-      { year: "2010", event: "Arangetram at Sri Kapaleeswarar Temple" },
-      { year: "2018", event: "International debut, Esplanade Singapore" },
-      { year: "2024", event: "Founded Naatya Sangam Trust" },
+      {
+        year: "2022",
+        event: "Elected Executive Student Council Secretary at Farmington High School",
+      },
+      { year: "2024", event: "Joined Indiana University Kelley School of Business" },
+      { year: "2025", event: "Selected to Investment Banking Workshop and Board of Aeons" },
+      { year: "2026", event: "Elected President of the Student Body at Kelley School of Business" },
     ],
     social: [
+      { label: "LinkedIn", href: "#" },
       { label: "Instagram", href: "#" },
-      { label: "Website", href: "#" },
     ],
   },
   {
